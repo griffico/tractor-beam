@@ -1,4 +1,5 @@
 {
+  "name": "tractor-beam",
   "scripts": {
     "start": "ts-node ./src/index.ts",
     "start-cloud": "ts-node ./dist/index.js",
