@@ -5,12 +5,10 @@ const existingCalls = [];
 
 const { RTCPeerConnection, RTCSessionDescription } = window;
 
-const peerConnection = new RTCPeerConnection();
-
-peerConnection.setConfiguration({ iceServers: [{
+const peerConnection = new RTCPeerConnection({ iceServers: [{
   urls: "stun:stun.l.google.com:19302",
   }]
-})
+});
 
 function unselectUsersFromList() {
   const alreadySelectedUser = document.querySelectorAll(
