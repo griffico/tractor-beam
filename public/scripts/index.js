@@ -128,17 +128,16 @@ peerConnection.ontrack = function({ streams: [stream] }) {
   }
 };
 
-navigator.getUserMedia(
-  { video: true, audio: true },
-  stream => {
+async function getMedia() {
+  const stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
+  try {
     const localVideo = document.getElementById("local-video");
     if (localVideo) {
       localVideo.srcObject = stream;
     }
-
+  
     stream.getTracks().forEach(track => peerConnection.addTrack(track, stream));
-  },
-  error => {
-    console.warn(error.message);
+  } catch(err) {
+    console.warn(err.message);
   }
 );
