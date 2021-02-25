@@ -140,4 +140,6 @@ async function getMedia() {
   } catch(err) {
     console.warn(err.message);
   }
-);
+}
+
+getMedia();
