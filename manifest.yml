@@ -1,0 +1,4 @@
+applications:
+  - name: mr-boyers-wild-ride
+    path: dist
+    buildpacks: [ staticfile_buildpack ]
