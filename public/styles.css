@@ -5,7 +5,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #f9fafc;
-  color: #595354;
+  /* background-image: url("./img/officefloor-02.svg"); 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; */
+  color: #ffffff;
 }
 
 .header {

@@ -1,7 +1,9 @@
+//@ts-nocheck
 import express, { Application } from "express";
 import socketIO, { Server as SocketIOServer } from "socket.io";
 import { createServer, Server as HTTPServer } from "http";
 import path from "path";
+
 
 export class Server {
   private httpServer: HTTPServer;
@@ -9,7 +11,6 @@ export class Server {
   private io: SocketIOServer;
 
   private activeSockets: string[] = [];
-
   private readonly DEFAULT_PORT = parseInt(process.env.PORT)|| 3000;
 
   constructor() {
@@ -27,7 +28,7 @@ export class Server {
   }
 
   private configureApp(): void {
-    this.app.use(express.static(path.join(__dirname, "../public")));
+    this.app.use(express.static(path.join(__dirname, "/public")));
   }
 
   private configureRoutes(): void {
